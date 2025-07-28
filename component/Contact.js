@@ -1,28 +1,48 @@
 "use client";
-import { Mail, MapPin, Phone } from "lucide-react"; // Or replace with your preferred icons
+
+import { Mail, MapPin, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const Contact = () => {
   return (
     <section id="contact" className="bg-gray-50 py-16 px-6 md:px-12 lg:px-20">
       <div className="w-full max-w-6xl mx-auto">
-        <div className=" border-l-4 border-red-500 pl-4 mb-4">
+        <motion.div
+          className="border-l-4 border-red-500 pl-4 mb-4"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Contact us.
           </h2>
           <p className="text-red-600 font-semibold mt-1">get in touch</p>
-        </div>
-        <div className="md:mt-18 mt-7 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+        </motion.div>
+
+        <motion.div
+          className="md:mt-18 mt-7 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {/* Left Info */}
           <div className="space-y-10">
-            <div className="flex items-start gap-4">
+            <motion.div className="flex items-start gap-4" variants={fadeInUp}>
               <Mail className="w-6 h-6 text-red-600 mt-1" />
               <div>
                 <p className="text-lg font-semibold text-black">hello@Nebro.com</p>
                 <p className="text-sm !text-gray-500">Email</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="flex items-start gap-4">
+            <motion.div className="flex items-start gap-4" variants={fadeInUp}>
               <MapPin className="w-6 h-6 text-red-600 mt-1" />
               <div>
                 <p className="text-lg font-semibold text-black">
@@ -30,19 +50,25 @@ const Contact = () => {
                 </p>
                 <p className="text-sm text-gray-500">Address</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="flex items-start gap-4">
+            <motion.div className="flex items-start gap-4" variants={fadeInUp}>
               <Phone className="w-6 h-6 text-red-600 mt-1" />
               <div>
                 <p className="text-lg font-semibold text-black">0800 123 456789</p>
                 <p className="text-sm text-gray-500">Phone</p>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Form */}
-          <form className="space-y-6">
+          <motion.form
+            className="space-y-6"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -81,8 +107,8 @@ const Contact = () => {
             >
               SUBMIT
             </button>
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
       </div>
     </section>
   );
