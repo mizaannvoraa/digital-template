@@ -123,13 +123,7 @@ const About = () => {
             className="text-gray-700 mb-6 leading-relaxed"
             variants={fadeInUp}
           >
-            Advice me cousin an spring of needed. Tell use paid law ever yet new.
-            Meant to learn of vexed if style allow he there. Tiled man stand tears
-            ten joy there terms any widen. Procuring continued suspicion its ten.
-            Pursuit brother are had fifteen distant has. Early had add equal china
-            quiet visit. Appear an manner as no limits either praise in. In in written
-            on charmed justice is amiable farther besides. Law insensible middletons
-            unsatiable for apartments boy delightful unreserved.
+          Thinkmint is a forward-thinking creative agency built on the belief that fresh ideas spark growth. Our team of designers, strategists, and digital innovators collaborate to craft solutions that are not just beautiful, but purposeful.
           </motion.p>
         </motion.div>
 
@@ -187,7 +181,7 @@ const About = () => {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Supplied directly pleasant we ignorant ecstatic of jointure so if. These spoke house of we. Ask put yet excuse person see change.
+            🌿 Fresh Perspective – We challenge the ordinary with ideas that stand out.
           </motion.p>
         </motion.div>
 
@@ -214,7 +208,7 @@ const About = () => {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem.
+           💡 Smart Strategy – Every design is backed by insights and data.
           </motion.p>
         </motion.div>
 
@@ -241,7 +235,7 @@ const About = () => {
             transition={{ delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Piqued favour stairs it enable exeter as seeing. Remainder met improving but engrossed sincerity age. Better but length gay denied abroad are.
+            🤝 Collaborative Spirit – We grow together with our clients, step by step.
           </motion.p>
         </motion.div>
       </motion.div>

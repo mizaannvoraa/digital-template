@@ -51,7 +51,7 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
           isScrolled
-            ? "bg-black/95 backdrop-blur-md shadow-2xl border-b border-white/10"
+            ? "bg-[#111111] backdrop-blur-md shadow-2xl border-b border-white/10"
             : "bg-transparent"
         }`}
       >
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Link href="/" className="flex items-center group py-2">
                 <div className="relative transition-transform duration-300 transform group-hover:scale-105 group-hover:rotate-3 py-1">
                   <Image
-                    src="/assets/trial_logo.png"
+                    src="/assets/logo.jpeg"
                     alt="NEBRO Logo"
                     width={200}
                     height={80}

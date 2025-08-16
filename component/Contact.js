@@ -37,7 +37,7 @@ const Contact = () => {
             <motion.div className="flex items-start gap-4" variants={fadeInUp}>
               <Mail className="w-6 h-6 text-red-600 mt-1" />
               <div>
-                <p className="text-lg font-semibold text-black">hello@Nebro.com</p>
+                <p className="text-lg font-semibold text-black">marketing@thinkmint.in</p>
                 <p className="text-sm !text-gray-500">Email</p>
               </div>
             </motion.div>
@@ -46,7 +46,7 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-red-600 mt-1" />
               <div>
                 <p className="text-lg font-semibold text-black">
-                  1444 S. Alameda Street, Los Angeles, CA 90021
+                  Andheri, Mumbai
                 </p>
                 <p className="text-sm text-gray-500">Address</p>
               </div>

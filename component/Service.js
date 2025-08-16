@@ -4,50 +4,50 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "Web Design",
+    title: "Web Design & Development",
     description:
-      "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state.",
+      "Custom websites that are fast, intuitive, and built to inspire action.",
     icon: "🖌️",
   },
   {
-    title: "Design & Concept",
+    title: "Brand Identity & Design",
     description:
-      "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state.",
+      "Logos, visuals, and design systems that capture your essence and stand the test of time.",
     icon: "✏️",
   },
   {
-    title: "Social Media",
+    title: "Social Media Strategy",
     description:
-      "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state.",
+      "Engaging campaigns and content calendars designed to build loyal communities.",
     icon: "🎨",
   },
   {
-    title: "Photography",
-    description:
-      "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state.",
+    title: "Photography & Video Production",
+    description:"High-impact visuals and storytelling that connect emotionally with your audience.",
     icon: "📷",
   },
   {
-    title: "Video Edit",
+    title: "Content & SEO Optimization",
     description:
-      "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state.",
+      "Words and strategies that rank, resonate, and deliver measurable results.",
     icon: "🎬",
   },
   {
-    title: "Seo Optimization",
+    title: "Creative Consulting",
     description:
-      "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state.",
+      "Tailored advice and fresh ideas to push your brand in the right direction.",
     icon: "📈",
   },
 ];
 
 const stats = [
-  { number: 820, label: "SATISFACTION CLIENTS" },
-  { number: 430, label: "EMPLOYEES ON WORLDWIDE" },
-  { number: 940, label: "PROJECTS COMPLETED ON 60 COUNTRIES" },
+  { number: 150, label: "Brands Empowered", showPlus: true },
+  { number: 25, label: "Countries Reached", showPlus: false },
+  { number: 300, label: "Creative Projects Completed", showPlus: true },
+  { number: 95, label: "Client Satisfaction Rate", showPlus: false, showPercent: true },
 ];
 
-const AnimatedCounter = ({ target }) => {
+const AnimatedCounter = ({ target, showPlus = false, showPercent = false }) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -87,8 +87,29 @@ const AnimatedCounter = ({ target }) => {
       onViewportEnter={startAnimation}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex items-center gap-1"
     >
-      {count}
+      <span>{count}</span>
+      {showPlus && (
+        <motion.span 
+          className="text-gray-900 font-bold"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+          transition={{ delay: 2, duration: 0.3, ease: "easeOut" }}
+        >
+          +
+        </motion.span>
+      )}
+      {showPercent && (
+        <motion.span 
+          className="text-gray-900 font-bold"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+          transition={{ delay: 2, duration: 0.3, ease: "easeOut" }}
+        >
+          %
+        </motion.span>
+      )}
     </motion.span>
   );
 };
@@ -274,7 +295,7 @@ const Service = () => {
 
         {/* Stats */}
         <motion.div
-          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-center mt-16 pt-12 border-t border-gray-300"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center mt-16 pt-12 border-t border-gray-300"
           variants={statsContainerVariants}
           initial="hidden"
           whileInView="visible"
@@ -283,15 +304,15 @@ const Service = () => {
           {stats.map((stat, idx) => (
             <motion.div 
               key={idx} 
-              className="flex md:flex-row flex-col items-center justify-center gap-1 md:gap-3"
+              className="flex flex-col items-center justify-center gap-2"
               variants={statVariants}
               whileHover={{ 
                 scale: 1.05,
                 transition: { duration: 0.2 }
               }}
             >
-              <motion.h3 
-                className="md:text-5xl text-3xl font-bold text-gray-900 mb-2"
+              <motion.div 
+                className="md:text-5xl text-3xl font-bold text-gray-900 mb-2 flex items-center justify-center"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ 
@@ -302,19 +323,23 @@ const Service = () => {
                 }}
                 viewport={{ once: true }}
               >
-                <motion.span
+                <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: idx * 0.2 + 0.8 }}
                   viewport={{ once: true }}
                 >
-                  <AnimatedCounter target={stat.number} />
-                </motion.span>
-              </motion.h3>
+                  <AnimatedCounter 
+                    target={stat.number} 
+                    showPlus={stat.showPlus}
+                    showPercent={stat.showPercent}
+                  />
+                </motion.div>
+              </motion.div>
               <motion.p 
-                className="text-center md:text-start w-full md:max-w-[160px] text-[#ff0e2a] font-semibold text-[17px] md:text-[14px]"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-center text-[#ff0e2a] font-semibold text-base leading-tight max-w-[160px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.2 + 1 }}
                 viewport={{ once: true }}
               >
