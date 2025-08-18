@@ -24,22 +24,6 @@ const Footer = () => {
           <p className="text-sm text-gray-400">© 2025 Thinkmint Media — Fresh ideas, lasting impact.</p>
         </div>
 
-        {/* Center: Social Icons */}
-        <div className="flex items-center gap-4">
-          <Link href="#" className="bg-neutral-800 hover:bg-neutral-700 p-3 rounded-full">
-            <Facebook className="w-5 h-5 text-white" />
-          </Link>
-          <Link href="#" className="bg-neutral-800 hover:bg-neutral-700 p-3 rounded-full">
-            <Twitter className="w-5 h-5 text-white" />
-          </Link>
-          <Link href="#" className="bg-neutral-800 hover:bg-neutral-700 p-3 rounded-full">
-            <Instagram className="w-5 h-5 text-white" />
-          </Link>
-          <Link href="#" className="bg-neutral-800 hover:bg-neutral-700 p-3 rounded-full">
-            <Dribbble className="w-5 h-5 text-white" />
-          </Link>
-        </div>
-
         {/* Right: Contact Info */}
         <div className="text-center md:text-right">
           <h4 className="text-lg font-bold">Get In Touch</h4>
